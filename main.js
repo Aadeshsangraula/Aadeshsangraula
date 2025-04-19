@@ -74,3 +74,24 @@ const animateOnScroll = () => {
 
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
+// Add this to your existing main.js
+document.addEventListener('DOMContentLoaded', function() {
+    const cvButton = document.querySelector('a[download*="CV"]');
+    
+    if (cvButton) {
+        cvButton.addEventListener('click', function(e) {
+            // Verify the file exists
+            fetch(this.href)
+                .then(response => {
+                    if (!response.ok) {
+                        e.preventDefault();
+                        alert('CV file not found. Please contact me directly at aadarshasangraula@gmail.com');
+                    }
+                })
+                .catch(() => {
+                    e.preventDefault();
+                    alert('Error accessing CV file. Please try again later.');
+                });
+        });
+    }
+});
