@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "public": true,
+  "name": "yourdomain.com.np",
+  "alias": ["www.yourdomain.com.np"],
+  "regions": ["bom1"],
+  "routes": [
+    {
+      "src": "/api/contact",
+      "dest": "https://api.yourdomain.com.np/api/contact",
+      "methods": ["POST"]
+    }
+  ]
+}
