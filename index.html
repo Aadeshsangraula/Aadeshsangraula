@@ -240,20 +240,20 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm" action="https://formsubmit.co/aadarshasangraula@gmail.com" method="POST">
+                   <form action="https://formsubmit.co/aadarshasangraula@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New message from your portfolio">
+                        <input type="hidden" name="_next" value="https://yourdomain.com.np/thank-you.html">
+                        
                         <div class="form-group">
-                            <input type="text" name="name" id="name" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" id="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="subject" id="subject" placeholder="Subject">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
                         </div>
-                        <div class="form-group">
-                            <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit">Send Message</button>
                     </form>
                    <div id="form-message"></div>
                     
