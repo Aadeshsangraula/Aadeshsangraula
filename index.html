@@ -1,1 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadesh Sangraula - Personal Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for theme and animations -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a1a; /* Dark cosmic blue */
+            color: #e0e0e0; /* Light gray for text */
+            overflow-x: hidden;
+        }
+
+        /* --- Custom Neon Glow and Colors --- */
+        .neon-text-teal {
+            text-shadow:
+                0 0 5px rgba(5, 217, 204, 0.7),
+                0 0 10px rgba(5, 217, 204, 0.7),
+                0 0 20px rgba(5, 217, 204, 0.7),
+                0 0 40px #05d9cc,
+                0 0 80px #05d9cc;
+        }
+        
+        .neon-text-magenta {
+            color: #ff79c6;
+             text-shadow:
+                0 0 5px rgba(255, 121, 198, 0.7),
+                0 0 10px rgba(255, 121, 198, 0.7),
+                0 0 20px #ff79c6;
+        }
+
+        .neon-border-teal {
+            border-color: #05d9cc;
+            box-shadow: 0 0 8px rgba(5, 217, 204, 0.6);
+        }
+
+        .btn-glow {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px rgba(5, 217, 204, 0.5), 0 0 10px rgba(5, 217, 204, 0.3);
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 15px rgba(5, 217, 204, 0.8), 0 0 30px rgba(5, 217, 204, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* --- Custom Background with Particles --- */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* --- Scroll-triggered Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* --- Timeline Styling --- */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #05d9cc;
+            border: 4px solid #0a0a1a;
+            box-shadow: 0 0 10px rgba(5, 217, 204, 0.7);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #05d9cc;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #04b3a2;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Particle background container -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header class="bg-opacity-80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="text-2xl font-bold text-white hover:text-teal-300 transition-colors">
+                    <span class="neon-text-teal">AS</span>
+                </a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-lg font-medium text-gray-300 hover:text-teal-300 transition-colors">About</a>
+                    <a href="#skills" class="text-lg font-medium text-gray-300 hover:text-teal-300 transition-colors">Skills</a>
+                    <a href="#projects" class="text-lg font-medium text-gray-300 hover:text-teal-300 transition-colors">Projects</a>
+                    <a href="#experience" class="text-lg font-medium text-gray-300 hover:text-teal-300 transition-colors">Experience</a>
+                    <a href="#contact" class="text-lg font-medium text-gray-300 hover:text-teal-300 transition-colors">Contact</a>
+                </nav>
+                 <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Projects</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Experience</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
+            <div class="reveal">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight">
+                    <span class="block">Hi, I'm</span>
+                    <span class="block text-teal-400 neon-text-teal mt-2">Aadesh Sangraula</span>
+                </h1>
+                <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
+                    A passionate <span class="font-bold text-fuchsia-400 neon-text-magenta">Software Developer</span> crafting innovative and beautiful web experiences from concept to reality.
+                </p>
+                <a href="#projects" class="mt-10 inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-full text-lg btn-glow">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32">
+            <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+                <div class="md:col-span-1">
+                    <img src="https://placehold.co/400x400/0a0a1a/05d9cc?text=Aadesh+S" alt="Aadesh Sangraula" class="rounded-full border-4 neon-border-teal w-64 h-64 md:w-full md:h-auto object-cover mx-auto">
+                </div>
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-teal-400">Me</span></h2>
+                    <p class="mb-4 text-gray-300">
+                        Hello! I'm Aadesh, a developer with a knack for building dynamic and user-friendly web applications. With a foundation in computer science and several years of hands-on experience, I thrive on turning complex problems into elegant, efficient solutions.
+                    </p>
+                    <p class="text-gray-300">
+                        My journey in tech began with a simple "Hello, World!" and has since evolved into a deep passion for modern web technologies like React, Node.js, and serverless architectures. When I'm not coding, you can find me exploring sci-fi novels or contributing to open-source projects.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 md:py-32">
+             <div class="reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My <span class="text-teal-400">Arsenal</span></h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                    <!-- Skill Item -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 bg-opacity-50 rounded-lg transition-transform hover:scale-105 hover:bg-gray-700">
+                        <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" class="h-16 w-16 mb-4" alt="JavaScript">
+                        <h3 class="text-xl font-semibold">JavaScript</h3>
+                    </div>
+                    <!-- Skill Item -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 bg-opacity-50 rounded-lg transition-transform hover:scale-105 hover:bg-gray-700">
+                        <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" class="h-16 w-16 mb-4" alt="React">
+                        <h3 class="text-xl font-semibold">React</h3>
+                    </div>
+                     <!-- Skill Item -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 bg-opacity-50 rounded-lg transition-transform hover:scale-105 hover:bg-gray-700">
+                        <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" class="h-16 w-16 mb-4" alt="Node.js">
+                        <h3 class="text-xl font-semibold">Node.js</h3>
+                    </div>
+                     <!-- Skill Item -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 bg-opacity-50 rounded-lg transition-transform hover:scale-105 hover:bg-gray-700">
+                        <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" class="h-16 w-16 mb-4" alt="Tailwind CSS">
+                        <h3 class="text-xl font-semibold">Tailwind</h3>
+                    </div>
+                     <!-- Skill Item -->
+                    <div class="flex flex-col items-center p-6 bg-gray-800 bg-opacity-50 rounded-lg transition-transform hover:scale-105 hover:bg-gray-700">
+                        <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" class="h-16 w-16 mb-4" alt="Python">
+                        <h3 class="text-xl font-semibold">Python</h3>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 md:py-32">
+            <div class="reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Featured <span class="text-teal-400">Projects</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1a1a2e/ff79c6?text=Project+Alpha" alt="Project Alpha" class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 text-fuchsia-400">Project Alpha</h3>
+                            <p class="text-gray-300 mb-4">A full-featured e-commerce platform built with the MERN stack, featuring real-time updates with Socket.IO and payment integration.</p>
+                            <a href="#" class="inline-block bg-gray-700 text-teal-300 py-2 px-4 rounded-lg hover:bg-teal-500 hover:text-white transition-colors">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1a1a2e/05d9cc?text=Project+Beta" alt="Project Beta" class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 text-teal-400">Project Beta</h3>
+                            <p class="text-gray-300 mb-4">An interactive data visualization dashboard using D3.js and React, providing insights into global market trends.</p>
+                            <a href="#" class="inline-block bg-gray-700 text-teal-300 py-2 px-4 rounded-lg hover:bg-teal-500 hover:text-white transition-colors">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1a1a2e/e0e0e0?text=Project+Gamma" alt="Project Gamma" class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 text-gray-200">Project Gamma</h3>
+                            <p class="text-gray-300 mb-4">A serverless-powered mobile application backend using AWS Lambda and DynamoDB for a scalable social media app.</p>
+                            <a href="#" class="inline-block bg-gray-700 text-teal-300 py-2 px-4 rounded-lg hover:bg-teal-500 hover:text-white transition-colors">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 md:py-32">
+            <div class="reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Career <span class="text-teal-400">Timeline</span></h2>
+                <div class="relative max-w-2xl mx-auto border-l-2 border-teal-500 border-opacity-30 pl-8">
+                    <!-- Timeline Item 1 -->
+                    <div class="mb-12 relative timeline-item">
+                        <h3 class="text-2xl font-bold text-teal-400">Senior Developer - TechCorp</h3>
+                        <p class="text-sm text-gray-400 mb-2">2021 - Present</p>
+                        <p class="text-gray-300">Leading the front-end team in developing a new SaaS platform. Mentoring junior developers and architecting scalable React components.</p>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div class="mb-12 relative timeline-item">
+                        <h3 class="text-2xl font-bold text-teal-400">Mid-Level Developer - Innovate LLC</h3>
+                        <p class="text-sm text-gray-400 mb-2">2019 - 2021</p>
+                        <p class="text-gray-300">Developed and maintained client websites using Vue.js and WordPress. Collaborated with designers to create pixel-perfect interfaces.</p>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div class="mb-12 relative timeline-item">
+                        <h3 class="text-2xl font-bold text-teal-400">Bachelor of Science - University of Tech</h3>
+                        <p class="text-sm text-gray-400 mb-2">2015 - 2019</p>
+                        <p class="text-gray-300">Graduated with honors in Computer Science. Focused on algorithms, data structures, and software engineering principles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32">
+            <div class="reveal text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-teal-400">Touch</span></h2>
+                <p class="text-lg text-gray-300 mb-6">
+                    I'm currently open to new opportunities and collaborations. Feel free to send me a message or give me a call.
+                </p>
+                 <div class="text-lg text-gray-300 mb-8 space-y-2">
+                    <p>Ncell: <a href="tel:+9779803383966" class="hover:text-teal-400">+977 9803383966</a></p>
+                    <p>US: <a href="tel:+14693892246" class="hover:text-teal-400">+1 469 389 2246</a></p>
+                </div>
+                <a href="mailto:contact@aadeshsangraula.com.np" class="inline-block bg-teal-500 text-white font-bold py-4 px-10 rounded-full text-xl btn-glow">
+                    Say Hello
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 bg-opacity-70 py-6">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <div class="flex justify-center items-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/aadeshsang" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors">LinkedIn</a>
+                <a href="https://www.facebook.com/sangraula.aadesh" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors">Facebook</a>
+                <a href="https://www.instagram.com/aadesh_sangraula/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors">Instagram</a>
+                 <a href="#" class="hover:text-teal-400 transition-colors">GitHub</a>
+            </div>
+            <p>&copy; 2025 Aadesh Sangraula. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+        // --- Particle.js Configuration ---
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#05d9cc" },
+                "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" } },
+                "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+                "size": { "value": 3, "random": true, "anim": { "enable": false } },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.1, "width": 1 },
+                "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                "modes": { "repulse": { "distance": 100, "duration": 0.4 }, "push": { "particles_nb": 4 } }
+            },
+            "retina_detect": true
+        });
+
+        // --- Scroll-triggered Animations ---
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        revealElements.forEach(el => observer.observe(el));
+        
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // --- Smooth scrolling for mobile menu links ---
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+    </script>
+</body>
+</html>
 
