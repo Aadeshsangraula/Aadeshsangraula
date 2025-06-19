@@ -21,6 +21,44 @@
             color: #e0e0e0; /* Light gray for text */
             overflow-x: hidden;
         }
+        
+        /* --- Preloader Styles --- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #0a0a1a; /* Match body background */
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.75s ease;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(5, 217, 204, 0.3);
+            border-top-color: #05d9cc; /* Neon Teal */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
 
         /* --- Custom Neon Glow and Colors --- */
         .neon-text-teal {
@@ -109,6 +147,11 @@
 </head>
 <body class="bg-gray-900 text-gray-200">
 
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Particle background container -->
     <div id="particles-js"></div>
 
@@ -169,7 +212,7 @@
         <section id="about" class="py-20 md:py-32">
             <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
                 <div class="md:col-span-1">
-                    <img src="/hero.jpg" alt="Aadesh Sangraula" class="rounded-full border-4 neon-border-teal w-64 h-64 md:w-full md:h-auto object-cover mx-auto">
+                    <img src="hero.jpg" alt="Aadesh Sangraula" class="rounded-full border-4 neon-border-teal w-64 h-64 md:w-full md:h-auto object-cover mx-auto">
                 </div>
                 <div class="md:col-span-2">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-teal-400">Me</span></h2>
@@ -317,6 +360,16 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <script>
+        // --- Preloader Logic ---
+        const preloader = document.getElementById('preloader');
+        window.addEventListener('load', () => {
+            preloader.classList.add('hidden');
+            // We can also remove the preloader from the DOM after the transition
+            preloader.addEventListener('transitionend', () => {
+                preloader.remove();
+            });
+        });
+
         // --- Particle.js Configuration ---
         particlesJS('particles-js', {
             "particles": {
@@ -367,4 +420,3 @@
     </script>
 </body>
 </html>
-
