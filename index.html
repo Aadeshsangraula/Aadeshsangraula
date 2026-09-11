@@ -264,39 +264,74 @@
         <!-- Projects Section -->
         <section id="projects" class="py-20 md:py-32">
             <div class="reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Featured <span class="text-teal-400">Projects</span></h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project Card 1 -->
-                    <div class="bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden group">
-                        <img src="https://placehold.co/600x400/1a1a2e/ff79c6?text=Project+Alpha" alt="Project Alpha" class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-fuchsia-400">Project Alpha</h3>
-                            <p class="text-gray-300 mb-4">A full-featured e-commerce platform built with the MERN stack, featuring real-time updates with Socket.IO and payment integration.</p>
-                            <a href="#" class="inline-block bg-gray-700 text-teal-300 py-2 px-4 rounded-lg hover:bg-teal-500 hover:text-white transition-colors">View Details</a>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Featured <span class="text-teal-400">Projects</span></h2>
+                <p class="text-center text-gray-400 max-w-xl mx-auto mb-12">Production-grade web platforms and scalable cloud applications.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Project 1: DemandBee HRM -->
+                    <div class="bg-gray-800 bg-opacity-40 border border-gray-800 rounded-2xl overflow-hidden group hover:border-teal-500/50 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative overflow-hidden">
+                                <img src="https://placehold.co/600x380/0d1322/05d9cc?text=DemandBee+HRM" alt="DemandBee HRM" class="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-4 right-4 bg-gray-900/80 backdrop-blur-md text-teal-300 text-xs font-semibold px-3 py-1 rounded-full border border-teal-500/30">
+                                    Enterprise Suite
+                                </span>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="text-xs font-mono bg-teal-950/60 text-teal-400 px-2.5 py-0.5 rounded">React</span>
+                                    <span class="text-xs font-mono bg-teal-950/60 text-teal-400 px-2.5 py-0.5 rounded">Node.js</span>
+                                    <span class="text-xs font-mono bg-teal-950/60 text-teal-400 px-2.5 py-0.5 rounded">PostgreSQL</span>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-teal-400 transition-colors">DemandBee HRM</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                                    A centralized human resource management platform featuring real-time attendance tracking, payroll workflows, role-based access control, and leave automation.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 flex items-center gap-4">
+                            <a href="spidy.blog" class="inline-flex items-center text-sm font-semibold text-teal-300 hover:text-white transition-colors">
+                                View Demo &rarr;
+                            </a>
+                            <a href="github.com" class="inline-flex items-center text-sm font-semibold text-gray-400 hover:text-teal-300 transition-colors">
+                                Source Code
+                            </a>
                         </div>
                     </div>
-                    <!-- Project Card 2 -->
-                    <div class="bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden group">
-                        <img src="https://placehold.co/600x400/1a1a2e/05d9cc?text=Project+Beta" alt="Project Beta" class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-teal-400">Project Beta</h3>
-                            <p class="text-gray-300 mb-4">An interactive data visualization dashboard using D3.js and React, providing insights into global market trends.</p>
-                            <a href="#" class="inline-block bg-gray-700 text-teal-300 py-2 px-4 rounded-lg hover:bg-teal-500 hover:text-white transition-colors">View Details</a>
+
+                    <!-- Project 2: Interactive Analytics Dashboard -->
+                    <div class="bg-gray-800 bg-opacity-40 border border-gray-800 rounded-2xl overflow-hidden group hover:border-fuchsia-500/50 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative overflow-hidden">
+                                <img src="https://placehold.co/600x380/130d22/ff79c6?text=Market+Insights" alt="Market Insights" class="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-4 right-4 bg-gray-900/80 backdrop-blur-md text-fuchsia-300 text-xs font-semibold px-3 py-1 rounded-full border border-fuchsia-500/30">
+                                    Analytics
+                                </span>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="text-xs font-mono bg-fuchsia-950/60 text-fuchsia-400 px-2.5 py-0.5 rounded">D3.js</span>
+                                    <span class="text-xs font-mono bg-fuchsia-950/60 text-fuchsia-400 px-2.5 py-0.5 rounded">React</span>
+                                    <span class="text-xs font-mono bg-fuchsia-950/60 text-fuchsia-400 px-2.5 py-0.5 rounded">Tailwind</span>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-fuchsia-400 transition-colors">Market Insights Dashboard</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                                    A real-time financial tracking dashboard aggregating market indices with dynamic data filtering, custom SVG charts, and interactive forecasting models.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Project Card 3 -->
-                    <div class="bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden group">
-                        <img src="https://placehold.co/600x400/1a1a2e/e0e0e0?text=Project+Gamma" alt="Project Gamma" class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-gray-200">Project Gamma</h3>
-                            <p class="text-gray-300 mb-4">A serverless-powered mobile application backend using AWS Lambda and DynamoDB for a scalable social media app.</p>
-                            <a href="#" class="inline-block bg-gray-700 text-teal-300 py-2 px-4 rounded-lg hover:bg-teal-500 hover:text-white transition-colors">View Details</a>
+                        <div class="px-6 pb-6 flex items-center gap-4">
+                            <a href="#" class="inline-flex items-center text-sm font-semibold text-fuchsia-300 hover:text-white transition-colors">
+                                View Demo &rarr;
+                            </a>
+                            <a href="#" class="inline-flex items-center text-sm font-semibold text-gray-400 hover:text-fuchsia-300 transition-colors">
+                                Source Code
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- Experience Section -->
         <section id="experience" class="py-20 md:py-32">
             <div class="reveal">
