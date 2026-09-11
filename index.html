@@ -7,7 +7,7 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    spidy
+    
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -264,74 +264,40 @@
         <!-- Projects Section -->
         <section id="projects" class="py-20 md:py-32">
             <div class="reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Featured <span class="text-teal-400">Projects</span></h2>
-                <p class="text-center text-gray-400 max-w-xl mx-auto mb-12">Production-grade web platforms and scalable cloud applications.</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    <!-- Project 1: DemandBee HRM -->
-                    <div class="bg-gray-800 bg-opacity-40 border border-gray-800 rounded-2xl overflow-hidden group hover:border-teal-500/50 transition-all duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="relative overflow-hidden">
-                                <img src="https://placehold.co/600x380/0d1322/05d9cc?text=DemandBee+HRM" alt="DemandBee HRM" class="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-500">
-                                <span class="absolute top-4 right-4 bg-gray-900/80 backdrop-blur-md text-teal-300 text-xs font-semibold px-3 py-1 rounded-full border border-teal-500/30">
-                                    Enterprise Suite
-                                </span>
-                            </div>
-                            <div class="p-6">
-                                <div class="flex flex-wrap gap-2 mb-3">
-                                    <span class="text-xs font-mono bg-teal-950/60 text-teal-400 px-2.5 py-0.5 rounded">React</span>
-                                    <span class="text-xs font-mono bg-teal-950/60 text-teal-400 px-2.5 py-0.5 rounded">Node.js</span>
-                                    <span class="text-xs font-mono bg-teal-950/60 text-teal-400 px-2.5 py-0.5 rounded">PostgreSQL</span>
-                                </div>
-                                <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-teal-400 transition-colors">DemandBee HRM</h3>
-                                <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                                    A centralized human resource management platform featuring real-time attendance tracking, payroll workflows, role-based access control, and leave automation.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="px-6 pb-6 flex items-center gap-4">
-                            <a href="https://spidy.blog" class="inline-flex items-center text-sm font-semibold text-teal-300 hover:text-white transition-colors" target="_blank">
-                                View Demo &rarr;
-                            </a>
-                            <a href="https://github.com" class="inline-flex items-center text-sm font-semibold text-gray-400 hover:text-teal-300 transition-colors" target="_blank">
-                                Source Code
-                            </a>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Featured <span class="text-teal-400">Projects</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1a1a2e/ff79c6?text=Project+Alpha" alt="Project Alpha" class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 text-fuchsia-400">Project Alpha</h3>
+                            <p class="text-gray-300 mb-4">A centralized human resource management platform featuring real-time attendance tracking, payroll workflows, role-based access control, and leave automation.</p>
+                            <a href="https://spidy.blog" class="inline-block bg-gray-700 text-teal-300 py-2 px-4 rounded-lg hover:bg-teal-500 hover:text-white transition-colors" target="_blank">View Details</a>
+                            <a href="https://github.com" class="inline-block bg-gray-700 text-teal-300 py-2 px-4 rounded-lg hover:bg-teal-500 hover:text-white transition-colors" target="_blank">Source Code</a>
                         </div>
                     </div>
-
-                    <!-- Project 2: Interactive Analytics Dashboard -->
-                    <div class="bg-gray-800 bg-opacity-40 border border-gray-800 rounded-2xl overflow-hidden group hover:border-fuchsia-500/50 transition-all duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="relative overflow-hidden">
-                                <img src="https://placehold.co/600x380/130d22/ff79c6?text=Market+Insights" alt="Market Insights" class="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-500">
-                                <span class="absolute top-4 right-4 bg-gray-900/80 backdrop-blur-md text-fuchsia-300 text-xs font-semibold px-3 py-1 rounded-full border border-fuchsia-500/30">
-                                    Analytics
-                                </span>
-                            </div>
-                            <div class="p-6">
-                                <div class="flex flex-wrap gap-2 mb-3">
-                                    <span class="text-xs font-mono bg-fuchsia-950/60 text-fuchsia-400 px-2.5 py-0.5 rounded">D3.js</span>
-                                    <span class="text-xs font-mono bg-fuchsia-950/60 text-fuchsia-400 px-2.5 py-0.5 rounded">React</span>
-                                    <span class="text-xs font-mono bg-fuchsia-950/60 text-fuchsia-400 px-2.5 py-0.5 rounded">Tailwind</span>
-                                </div>
-                                <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-fuchsia-400 transition-colors">Market Insights Dashboard</h3>
-                                <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                                    A real-time financial tracking dashboard aggregating market indices with dynamic data filtering, custom SVG charts, and interactive forecasting models.
-                                </p>
-                            </div>
+                    <!-- Project Card 2 -->
+                    <div class="bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1a1a2e/05d9cc?text=Project+Beta" alt="Project Beta" class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 text-teal-400">Project Beta</h3>
+                            <p class="text-gray-300 mb-4">An interactive data visualization dashboard using D3.js and React, providing insights into global market trends.</p>
+                            <a href="#" class="inline-block bg-gray-700 text-teal-300 py-2 px-4 rounded-lg hover:bg-teal-500 hover:text-white transition-colors">View Details</a>
                         </div>
-                        <div class="px-6 pb-6 flex items-center gap-4">
-                            <a href="#" class="inline-flex items-center text-sm font-semibold text-fuchsia-300 hover:text-white transition-colors">
-                                View Demo &rarr;
-                            </a>
-                            <a href="#" class="inline-flex items-center text-sm font-semibold text-gray-400 hover:text-fuchsia-300 transition-colors">
-                                Source Code
-                            </a>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1a1a2e/e0e0e0?text=Project+Gamma" alt="Project Gamma" class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 text-gray-200">Project Gamma</h3>
+                            <p class="text-gray-300 mb-4">A serverless-powered mobile application backend using AWS Lambda and DynamoDB for a scalable social media app.</p>
+                            <a href="#" class="inline-block bg-gray-700 text-teal-300 py-2 px-4 rounded-lg hover:bg-teal-500 hover:text-white transition-colors">View Details</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- Experience Section -->
         <section id="experience" class="py-20 md:py-32">
             <div class="reveal">
@@ -379,54 +345,17 @@
     </main>
 
     <!-- Footer -->
-   <footer class="border-t border-gray-800 bg-[#070714] relative z-10 pt-14 pb-8">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-gray-800/80">
-                    <!-- Brand Column -->
-                    <div class="md:col-span-2 space-y-3">
-                        <a href="#" class="text-2xl font-bold text-white tracking-wider">
-                            <span class="neon-text-teal">AS</span>
-                        </a>
-                        <p class="text-gray-400 text-sm max-w-sm">
-                            Building reliable software with scalable architectures, modern tooling, and polished design.
-                        </p>
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-950/40 border border-teal-500/20 text-xs text-teal-400 mt-2">
-                            <span class="h-2 w-2 rounded-full bg-teal-400 animate-pulse"></span>
-                            Available for select opportunities
-                        </div>
-                    </div>
-
-                    <!-- Quick Links -->
-                    <div>
-                        <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-200 mb-3">Navigation</h4>
-                        <ul class="space-y-2 text-sm text-gray-400">
-                            <li><a href="#about" class="hover:text-teal-400 transition-colors">About</a></li>
-                            <li><a href="#skills" class="hover:text-teal-400 transition-colors">Arsenal</a></li>
-                            <li><a href="#projects" class="hover:text-teal-400 transition-colors">Projects</a></li>
-                            <li><a href="#experience" class="hover:text-teal-400 transition-colors">Timeline</a></li>
-                            <li><a href="#contact" class="hover:text-teal-400 transition-colors">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Connect Links -->
-                    <div>
-                        <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-200 mb-3">Connect</h4>
-                        <ul class="space-y-2 text-sm text-gray-400">
-                            <li><a href="https://www.linkedin.com/in/aadeshsang" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors">LinkedIn</a></li>
-                            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors">GitHub</a></li>
-                            <li><a href="https://www.instagram.com/aadesh_sangraula/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors">Instagram</a></li>
-                            <li><a href="https://www.facebook.com/sangraula.aadesh" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors">Facebook</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Copyright Bar -->
-                <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-3">
-                    <p>&copy; 2026 Aadesh Sangraula. Built with passion & precision.</p>
-                    <p>Kathmandu, Nepal</p>
-                </div>
+    <footer class="bg-gray-900 bg-opacity-70 py-6">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <div class="flex justify-center items-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/aadeshsang" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors" target="_blank">LinkedIn</a>
+                <a href="https://www.facebook.com/sangraula.aadesh" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/aadesh_sangraula/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors" target="_blank">Instagram</a>
+                 <a href="https://github.com" class="hover:text-teal-400 transition-colors">GitHub</a>
             </div>
-        </footer>>
+            <p>&copy; 2026 Aadesh Sangraula. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- particles.js library -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
